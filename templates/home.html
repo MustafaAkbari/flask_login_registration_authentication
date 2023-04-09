@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+{% extends "base.html" %}
+{% block content %}
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h3 class="display-3">Registration and Authentication</h3>
+    <p class="lead">You can register yourself and then login to your dashboard</p>
+    <br><br>
+    <h5 class="display-5">List of available users:</h5>
+<div  class="shadow-lg p-3 mb-5 bg-white rounded">
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">User Id</th>
+      <th scope="col">User FullName</th>
+      <th scope="col">User Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for user in users %}
+    <tr class="table-info">
+      <td>{{user.id}}</td>
+      <td>{{user.fullname}}</td>
+      <td>{{user.email}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+{% endblock %}
+</body>
+</html>
